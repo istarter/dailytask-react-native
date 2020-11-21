@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainStackNavigator from './src/screens/ListViewScreen';
+import MainStackNavigator from './src/navigation/MainStackNavigator';
 
 const App = () => {
   return <MainStackNavigator />;

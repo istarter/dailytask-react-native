@@ -1,17 +1,20 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import SignIn from '../screens/SignIn';
-import SignUp from '../screens/SignUp';
+import {NavigationContainer} from '@react-navigation/native';
+import ListViewScreen from '../screens/ListViewScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createStackNavigator();
 
-function MainNavigator() {
+function AuthStackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="SignIn" component={SignIn} />
-    </Stack.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ListView" component={ListViewScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-export default MainNavigator;
+export default AuthStackNavigator;
