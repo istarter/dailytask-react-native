@@ -46,14 +46,16 @@ export default function ListViewScreen({navigation}) {
             }}
           />
         </View>
-        <View style={styles.content}>
-          <Text style={styles.textStyle}>Shami ana</Text>
-          <Text>Shamiana@gmail.com</Text>
+        <View style={styles.parentFlex}>
+          <View style={styles.content}>
+            <Text style={styles.textStyle}>Shami ana</Text>
+            <Text>shamiana@gmail.com</Text>
+            <View style={styles.iconStyle}>
+              <CaretIcon name="chevron-thin-right" color="gray" size={20} />
+            </View>
+            <View style={styles.spacingLine}></View>
+          </View>
         </View>
-        <View style={styles.iconStyle}>
-          <CaretIcon name="chevron-thin-right" size={30} />
-        </View>
-        <View style={styles.spacingLine}></View>
       </View>
     </View>
   );
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   imgContainer: {
-    flex: 0.25,
+    flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -95,22 +97,27 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 80,
   },
+  parentFlex: {
+    flex: 0.8,
+  },
   content: {
-    flex: 0.5,
+    flex: 0.9,
     paddingTop: 13,
   },
   textStyle: {
     fontSize: 18,
   },
   iconStyle: {
-    flex: 0.25,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'flex-end',
-    marginRight: 7,
+    marginRight: 10,
   },
   spacingLine: {
-    paddingVertical: 20,
-    borderBottomWidth: 1,
+    alignItems: 'center',
+    paddingVertical: 10,
+    borderTopWidth: 1,
     borderColor: 'gray',
+    marginVertical: 5,
   },
 });
