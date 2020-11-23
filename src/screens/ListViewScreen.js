@@ -1,27 +1,37 @@
 import React from 'react';
-import {StyleSheet, Image, Text, View, FlatList, TextInput} from 'react-native';
+import {StyleSheet, View, TextInput, FlatList} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import CaretIcon from 'react-native-vector-icons/Entypo';
+import CommonListItems from '../component/commonListItems';
 
 export default function ListViewScreen({navigation}) {
-  const listData = [
+  const userListData = [
     {
-      email: 'Amy Farha',
-      avatar_url:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-      subtitle: 'Vice President',
+      id: '1',
+      image:
+        'https://pbs.twimg.com/profile_images/1154293017160888321/_9Y-ozws_400x400.jpg',
+      title: 'jone',
+      email: 'jone@gmail.com',
     },
     {
-      name: 'Chris Jackson',
-      avatar_url:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-      subtitle: 'Vice Chairman',
+      id: '2',
+      image:
+        'https://pbs.twimg.com/profile_images/1154293017160888321/_9Y-ozws_400x400.jpg',
+      title: 'Max',
+      email: 'max@abc.com',
     },
     {
-      name: 'Aimy',
-      avatar_url:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-      subtitle: 'CTO',
+      id: '3',
+      image:
+        'https://pbs.twimg.com/profile_images/1154293017160888321/_9Y-ozws_400x400.jpg',
+      title: 'Jack',
+      email: 'jack@gmail.com',
+    },
+    {
+      id: '4',
+      image:
+        'https://pbs.twimg.com/profile_images/1154293017160888321/_9Y-ozws_400x400.jpg',
+      title: 'emma',
+      email: 'emma@gmail.com',
     },
   ];
 
@@ -36,27 +46,17 @@ export default function ListViewScreen({navigation}) {
           placeholder="Search"
         />
       </View>
-      <View style={styles.listContainer}>
-        <View style={styles.imgContainer}>
-          <Image
-            style={styles.imgStyle}
-            source={{
-              uri:
-                'https://pbs.twimg.com/profile_images/1154293017160888321/_9Y-ozws_400x400.jpg',
-            }}
+      <FlatList
+        data={userListData}
+        renderItem={({item, index}) => (
+          <CommonListItems
+            image={item.image}
+            title={item.title}
+            email={item.email}
           />
-        </View>
-        <View style={styles.parentFlex}>
-          <View style={styles.content}>
-            <Text style={styles.textStyle}>Shami ana</Text>
-            <Text>shamiana@gmail.com</Text>
-            <View style={styles.iconStyle}>
-              <CaretIcon name="chevron-thin-right" color="gray" size={20} />
-            </View>
-            <View style={styles.spacingLine}></View>
-          </View>
-        </View>
-      </View>
+        )}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 }
@@ -82,42 +82,5 @@ const styles = StyleSheet.create({
     fontSize: 35,
     alignSelf: 'center',
     marginHorizontal: 15,
-  },
-  listContainer: {
-    height: 70,
-    flexDirection: 'row',
-  },
-  imgContainer: {
-    flex: 0.2,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imgStyle: {
-    width: 60,
-    height: 60,
-    borderRadius: 80,
-  },
-  parentFlex: {
-    flex: 0.8,
-  },
-  content: {
-    flex: 0.9,
-    paddingTop: 13,
-  },
-  textStyle: {
-    fontSize: 18,
-  },
-  iconStyle: {
-    flex: 0.1,
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    marginRight: 10,
-  },
-  spacingLine: {
-    alignItems: 'center',
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderColor: 'gray',
-    marginVertical: 5,
   },
 });
