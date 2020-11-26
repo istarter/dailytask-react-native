@@ -20,7 +20,7 @@ export default CommonHeader;
 const styles = StyleSheet.create({
   headerStyle: {
     height: scale(100),
-    borderWidth: 2,
+    // borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'flex-end',
     paddingTop: 20,
