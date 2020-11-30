@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'flex-end',
-    paddingTop: 20,
+    paddingTop: 5,
   },
   imageStyle: {
     height: scale(50),

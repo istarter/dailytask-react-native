@@ -10,6 +10,7 @@ export default function HomeScreen({navigation}) {
         onPress={() => navigation.navigate('ListView')}
       />
       <Button title="Toys Screen" onPress={() => navigation.navigate('Toys')} />
+      <Button title="Fox Setting" onPress={() => navigation.navigate('Fox')} />
     </View>
   );
 }

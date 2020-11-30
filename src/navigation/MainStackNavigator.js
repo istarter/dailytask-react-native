@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import ListViewScreen from '../screens/ListViewScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ToysScreenList from '../screens/ToysScreenList';
+import FoxSettingScreen from '../screens/FoxSettingScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ function MainStackNavigator() {
           name="Toys"
           component={ToysScreenList}
         />
+        <Stack.Screen name="Fox" component={FoxSettingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
